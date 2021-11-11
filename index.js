@@ -1,7 +1,5 @@
-require('dotenv').config()
-
 const Discord = require('discord.js')
-const config = require('./config')
+require('dotenv').config()
 
 const discordClient = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] })
 
