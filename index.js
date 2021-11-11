@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const Discord = require('discord.js')
 const config = require('./config')
 
@@ -101,4 +103,4 @@ fs.writeFile("archiveData.json", JSON.stringify(archiveData), function (err) {
     console.log()
 });
 
-discordClient.login(config.discordApiToken);
+discordClient.login(process.env.TOKEN);
