@@ -7,7 +7,7 @@ const archiveData = {
     archiveChannel: "Archive",
     archiveWatch: "Game Chats",
     notificationChannel: "😎anything😎",
-    archiveLimit: "31"
+    archiveLimit: "62"
 }
 
 discordClient.on('ready', () => {
@@ -119,7 +119,7 @@ discordClient.on("messageCreate", (message) => {
                 //Spit out to the console the difference in days. Debugging reasons
                 console.log("Channel " + channel.name + " difference in days: " + diffDay)
 
-                if (diffDay >= archiveData.archiveLimit) {
+                if (diffDay > archiveData.archiveLimit) {
                     let notificationChannel = message.guild.channels.cache.find(channel => channel.name.toLowerCase() === archiveData.notificationChannel.toLowerCase())
                     let archiveChannel = message.guild.channels.cache.find(channel => channel.name.toLowerCase() === archiveData.archiveChannel.toLowerCase())
                     console.log(notificationChannel.name)
